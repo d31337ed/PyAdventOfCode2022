@@ -20,7 +20,19 @@ def find_fattest_elf(elves):
     return max(calories)
 
 
+def find_3fattest_elves(elves):
+    elves = response.split('\n\n')
+    calories = []
+    for elf in elves:
+        elf = list(filter(None, elf.split('\n')))
+        calories_by_elf = sum([eval(fruit) for fruit in elf])
+        calories.append(calories_by_elf)
+    leaderboard = sorted(calories)
+    return sum(leaderboard[-3:])
+
+
 print(find_fattest_elf(response))
+print(find_3fattest_elves(response))
 
 
 
