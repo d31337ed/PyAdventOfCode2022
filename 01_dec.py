@@ -16,15 +16,11 @@ def find_fattest_elf(elves):
     for elf in elves:
         elf = list(filter(None, elf.split('\n')))
         calories_by_elf = sum([eval(fruit) for fruit in elf])
-
         calories.append(calories_by_elf)
-    print(calories)
     return max(calories)
 
 
-find_fattest_elf(response)
-
-# print(find_fattest_elf(response))
+print(find_fattest_elf(response))
 
 
 
